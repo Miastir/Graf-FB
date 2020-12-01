@@ -8,6 +8,12 @@ using namespace std;
 int main() // основна€ программа
 {
 setlocale(LC_ALL, "Rus");
+
+    vector<int> parent(6,-1);    // объ€вление вектора и заполнение занчени€ми -1
+    
+    int Infinity(10000);// аналоги€ бесконечности, очень большое число
+    
+    
 	 int matrix[6][6] = {{0,3,0,0,6,20},//ћатрица весов графа
                         {3,0,8,3,0,0},
                         {0,8,0,4,0,5},
@@ -42,6 +48,52 @@ cout << endl;
                     a[i][j] = a[i][k] + a[k][j];
                     
                     
+//ƒейкстра
+int pos[6],node[6],min(0),index_min(0);
+    for(int i = 0;i<6;++i){// заполн€ем массивы бесконечност€ми или нул€ми
+        pos[i] = Infinity;// массив рассто€ний до вершин от исходной
+        node[i] = 0; // массив посещени€ вершин
+        
+    }
+    
+   //¬ывод матрица весов графа
+    for(int i = 0;i<6;++i){
+        for(int j = 0;j<6;++j){
+            cout << setw(4) << matrix[i][j];
+        }
+        cout << "\n";
+    }
+    //задаетс€ стартова€ вершина
+    int l,p;
+    std::cout << "\n v vedite vershiny home : ";
+    std::cin >> l;
+    pos[l-1] = 0;            
+    
+    
+    p=1;
+    for(int i = 0 ;i<5 && (p>0);++i){
+        min = Infinity;               
+        p=0;
+		    for(int j = 0;j<6;++j){
+        	
+            if(!node[j] && pos[j] < min){
+                min = pos[j];
+                index_min = j;
+                p=1;
+            }
+        }
+        node[index_min] = true;
+    
+   
+		                
+        for(int j = 0;j<6;++j){
+        	/*              проверка путей между вершинами и длины пути                              */
+            if(!node[j] && matrix[index_min][j] > 0 && pos[index_min] != Infinity && pos[index_min] + matrix[index_min][j] < pos[j]){
+                pos[j] = pos[index_min] + matrix[index_min][j];
+                parent.at(j) = index_min;    // запоминаем предка вершины j
+            }
+        } 
+                    
                     
 
 //јлгоритм вывода данных
@@ -51,7 +103,30 @@ cout << endl;
             cout << a[i][j] << "\t";
         cout << endl;
     }
-  
+  int n(0);
+    
+    std::cout << "\n v vedite vershiny end : ";
+    std::cin >> n;
+ 
+    vector<int>temp;     // 
+    
+    for(int i = n-1;i != -1;i = parent.at(i))temp.push_back(i+1);   
+    reverse(temp.begin(),temp.end());
+    
+    std::cout <<"\n"<< "min marshrut: "<< "\n";
+    for(int i = 0;i<temp.size();++i){
+	std::cout << temp.at(i) << " ";}
+        
+        
+    std::cout <<"\n"<< "dlinna puti : " << pos[n-1] << "\n";
+    
+    //вывод длин всех путей
+    std::cout <<"\n"<< "dlinna puti do vsex vershin is vershini "<<l<<"\n";
+    for(int i = 0;i<6;++i){    
+    std::cout <<l<< "-"<< i+1 << "=" << pos[i] << "\n";
+}
+ 
+    std::cout << endl;
     
 system("pause");
-}
+}}
