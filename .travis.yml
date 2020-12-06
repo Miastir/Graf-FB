@@ -1,7 +1,0 @@
-language: cpp
-
-install: make get-deps
-
-compiler:
-  - clang
-  - gcc
