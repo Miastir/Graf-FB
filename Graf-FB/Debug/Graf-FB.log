@@ -1,6 +1,4 @@
-﻿  floid.cpp
-  Graf-FB.cpp
-F:\Users\M.S.-1\Documents\GitHub\Graf-FB\Graf-FB\Graf-FB.cpp(44,13): warning C4566: символ, представленный универсальным именем символа "\uFFFD", невозможно представить в текущей кодовой странице (1251)
+﻿  Graf-FB.cpp
+  floid.cpp
   Создание кода...
-  LINK : не найден или не выполнена сборка F:\Users\M.S.-1\Documents\GitHub\Graf-FB\Graf-FB\Debug\Graf-FB.exe при последней инкрементной компоновке; выполняется полная компоновка
   Graf-FB.vcxproj -> F:\Users\M.S.-1\Documents\GitHub\Graf-FB\Graf-FB\Debug\Graf-FB.exe
