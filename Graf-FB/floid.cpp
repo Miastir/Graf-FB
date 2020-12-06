@@ -9,7 +9,7 @@ void floid(int(&a)[6][6]) {
                 if (a[i][j] > a[i][k] + a[k][j])
                     a[i][j] = a[i][k] + a[k][j];
 
-    std::cout<< std::endl << " matrix  dlin putei :" << std::endl;
+    std::cout<< std::endl << " ћатрица минимальных длин между вершинами :" << std::endl;
 
     for (int i = 0; i < 6; i++)
     {
