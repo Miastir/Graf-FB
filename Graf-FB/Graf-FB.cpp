@@ -3,6 +3,28 @@
 
 using namespace std;
 
+int i, j,n=6;
+bool* visited = new bool[n];
+
+int matrix[6][6] = { {0,3,0,0,6,20},
+					  {3,0,8,3,0,0},
+					  {0,8,0,4,0,5},
+					  {0,3,4,0,0,0},
+					  {6,0,0,0,0,7},
+					  {20,0,5,0,7,0},
+};
+
+
+//поиск в глубину
+void DFS(int st)
+{
+	int r;
+	cout << st + 1 << " ";
+	visited[st] = true;
+	for (r = 0; r <= n; r++)
+		if ((matrix[st][r] != 0) && (!visited[r]))
+			DFS(r);
+}
 
 int main()
 {
@@ -37,23 +59,23 @@ int main()
 
        floid(a);// алгорим нахождения  кротчайшего расстояния между городами
 
-        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		   int start;
+		   cout << "Матрица смежности графа: " << endl;
+		   for (i = 0; i < n; i++)
+		   {
+			   visited[i] = false;
+			   for (j = 0; j < n; j++)
+				   cout << " " << matrix[i][j];
+			   cout << endl;
+		   }
+		   cout << "Стартовая вершина >> "; cin >> start;
+		   //массив посещенных вершин
+		   bool* vis = new bool[n];
+		   cout << "Порядок обхода: ";
+		   DFS(start - 1);
+		   delete[]visited;
+		
 
 
 
