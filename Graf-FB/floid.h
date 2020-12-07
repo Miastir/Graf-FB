@@ -1,5 +1,5 @@
 #pragma once
-void floid(int(&a)[6][6]);
+void floid(int(&matrix)[6][6]);
 
 
 

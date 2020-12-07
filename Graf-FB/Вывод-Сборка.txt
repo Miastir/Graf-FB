@@ -1,0 +1,6 @@
+﻿Сборка начата…
+1>------ Сборка начата: проект: UnitTest1, Конфигурация: Debug Win32 ------
+1>UnitTest1.cpp
+1>   Создается библиотека F:\Users\M.S.-1\Documents\GitHub\Graf-FB\Graf-FB\Debug\UnitTest1.lib и объект F:\Users\M.S.-1\Documents\GitHub\Graf-FB\Graf-FB\Debug\UnitTest1.exp
+1>UnitTest1.vcxproj -> F:\Users\M.S.-1\Documents\GitHub\Graf-FB\Graf-FB\Debug\UnitTest1.dll
+========== Сборка: успешно: 1, с ошибками: 0, без изменений: 1, пропущено: 0 ==========
